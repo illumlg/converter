@@ -18,7 +18,6 @@ services:
     depends_on:
       - db
   db:
-    container_name: converter_db
     image: postgres:alpine
     networks:
       - net
