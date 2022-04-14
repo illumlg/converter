@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "socket.io": "^4.4.1",
+    "workerpool": "^6.2.0"
+  },
+  "type": "module",
+  "jest": {
+    "transform": {},
+    "testEnvironment": "jest-environment-node",
+    "testTimeout": 30000
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
