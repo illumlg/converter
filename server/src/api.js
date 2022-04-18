@@ -7,7 +7,10 @@ export function getBtcCurrent() {
             return curArr.map(item => {
                 return {code: item[0].toUpperCase(), rate: item[1].value, description: item[1].name};
             });
-        }).catch(err => console.error(err));
+        }).catch(e => {
+            console.error(`Can't reach api, error code ${e.code}`);
+            return [];
+        });
 }
 
 export async function getPriceInterval() {
@@ -17,6 +20,6 @@ export async function getPriceInterval() {
         return axios.get(`https://api.coingecko.com/api/v3/coins/${cur}/market_chart?vs_currency=usd&days=30`)
             .then((axiosRes) => response[cur] = axiosRes.data.prices);
     });
-    await Promise.all(promises);
+    await Promise.all(promises).catch(e => console.error(`Can't reach api, error code ${e.code}`));
     return response;
 }

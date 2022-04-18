@@ -5,6 +5,20 @@
     flex-direction: column;
 }
 
+%button {
+    text-transform: uppercase;
+    background-color: rgb(197, 19, 19);
+    border: rgb(197, 19, 19);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    transition: background-color 0.3s;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(197, 19, 19, 0.8);
+    }
+}
+
 .brand-logo {
     margin-left: 20px;
 }
@@ -15,74 +29,76 @@
 
 .app {
     @extend %v_flex;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #282c34;
     font-size: calc(5px + 2vmin);
     justify-content: flex-start;
     color: white;
 }
 
+.content {
+    @extend %v_flex;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
 .converter_box {
     @extend %v_flex;
     margin-top: 10px;
-    align-items: center;
-}
-
-.converter_box label {
-    color: white;
-}
-
-.converter_form {
-    @extend %v_flex;
-    align-items: center;
-    row-gap: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-bottom: 10px;
+    align-self: center;
     background-color: #32363d;
+    overflow-y: auto;
 
-    input[type="submit"] {
-        text-transform: uppercase;
-        background-color: rgb(197, 19, 19);
-        border: rgb(197, 19, 19);
-        border-radius: 5px;
+    label {
         color: white;
-        transition: background-color 0.3s;
-        &:hover {
-            cursor: pointer;
-            background-color: rgba(197, 19, 19, 0.8);
-        }
-        padding: 10px;
     }
 
-    input[type="number"] {
-        -moz-appearance: textfield;
-        font-size: calc(5px + 2vmin) !important;
-        transition: opacity 0.3s;
-        &:focus {
-            -moz-appearance: none;
-            border-bottom-color: rgb(197, 19, 19) !important;
-            box-shadow: none !important;
+    form {
+        @extend %v_flex;
+        align-items: center;
+        row-gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        input[type="submit"] {
+            @extend %button;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            font-size: calc(5px + 2vmin) !important;
+            transition: opacity 0.3s;
+            color: white;
+            &:focus {
+                -moz-appearance: none;
+                border-bottom-color: rgb(197, 19, 19) !important;
+                box-shadow: none !important;
+            }
+        }
+
+        select {
+            background-color: rgb(197, 19, 19);
+            color: white;
+            border: rgb(197, 19, 19);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: auto;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(197, 19, 19, 0.8);
+            }
         }
     }
 
-    select {
-        background-color: rgb(197, 19, 19);
-        color: white;
-        border: rgb(197, 19, 19);
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        &:hover {
-            cursor: pointer;
-            background-color: rgba(197, 19, 19, 0.8);
-        }
+    .result {
+        align-self: center;
     }
-}
-
-.form_field {
-    color: white;
 }
 
 .title {
+    align-self: center;
     font-size: calc(12px + 2vmin);
 }
 
@@ -97,11 +113,29 @@ footer {
     margin-top: auto;
     text-align: center;
     background-color: rgb(131, 13, 13);
-    min-height: 2vmin;
+    font-size: 1.5rem;
 }
 
-.tableCont {
+.elastic {
+    display: flex;
+    height: 100%;
     overflow-y: auto;
-    flex-grow: 1;
-    height: calc(100vh - 64px - 35px);
+    border-top: 2px white solid;
+    .form_container {
+        padding-top: 10px;
+    }
+    .read {
+        @extend %v_flex;
+        border-right: 2px white solid;
+        overflow-y: auto;
+        row-gap: 10px;
+        div {
+            overflow-y: auto;
+        }
+        button {
+            @extend %button;
+            margin: auto 10px 10px;
+            align-self: center;
+        }
+    }
 }

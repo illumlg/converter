@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import socket from '../socket';
+import CurrencySelect from "./currencySelect";
 
 function Converter() {
     const rates = useSelector((state) => state.rates.value);
@@ -18,7 +19,8 @@ function Converter() {
     const [result, setResult] = useState({fiat: 0, btc:0});
     return (
         <div className="converter_box">
-            <form className="converter_form" onSubmit={(event) => {
+            <label className="title">Converter</label>
+            <form onSubmit={(event) => {
                     event.preventDefault();
                     let res = convert({...form});
                     if(res.status==="nok") {
@@ -32,16 +34,14 @@ function Converter() {
                         result_value: res.fiat,
                         result_currency: form.secondCode,
                         bitcoin_rate: res.btc,
-                        date: new Date().toLocaleString()
+                        date: new Date().toLocaleString("uk-UA")
                     });
                 }
             }>
-                <label className="title">Converter</label>
                 <div>
                     <label htmlFor="value">Value</label>
                     <input id="value"
                            name="value"
-                           className="form_field"
                            type="number"
                            required
                            defaultValue="0"
@@ -51,52 +51,24 @@ function Converter() {
                            onChange={(event) =>
                                setForm({...form, [event.target.name]: event.target.value})} />
                 </div>
-                <div>
-                    <select name="firstCode"
-                            defaultValue=""
-                            required
-                            className="browser-default"
-                            onChange={(event) =>
-                                setForm({...form, [event.target.name]: event.target.value})}>
-                        <option value="" disabled hidden>Select currency 1</option>
-                        {
-                            rates.length ?
-                                rates.map((item, i) => {
-                                    return (
-                                        <option key={i} value={item.code}>{item.code}</option>
-                                    );
-                                })
-                                : <option disabled value="">loading...</option>
-                        }
-                    </select>
-                </div>
-                <div>
-                    <select name="secondCode"
-                            defaultValue=""
-                            required
-                            className="browser-default"
-                            onChange={(event) =>
-                                setForm({...form, [event.target.name]: event.target.value})}>
-                        <option value="" disabled hidden>Select currency 2</option>
-                        {
-                            rates.length ?
-                                rates.map((item, i) => {
-                                    return (
-                                        <option key={i} value={item.code}>{item.code}</option>
-                                    );
-                                })
-                                : <option disabled value="">loading...</option>
-
-                        }
-                    </select>
-                </div>
+                <CurrencySelect name="firstCode"
+                                form={form}
+                                setForm={setForm}
+                                rates={rates}
+                                desc="Select currency 1" />
+                <CurrencySelect name="secondCode"
+                                form={form}
+                                setForm={setForm}
+                                rates={rates}
+                                desc="Select currency 2"/>
                 <input type="submit" value="convert" />
-                <div>
-                    <label>Result: </label>
-                    <div>{result.fiat.toFixed(2)} {form.secondCode}</div>
-                    <div>{result.btc.toFixed(8)} BTC</div>
-                </div>
             </form>
+            <div className="hl" />
+            <div className="result">
+                <label>Result: </label>
+                <div>{result.fiat.toFixed(2)} {form.secondCode}</div>
+                <div>{result.btc.toFixed(8)} BTC</div>
+            </div>
         </div>
     )
 }

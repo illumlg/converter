@@ -4,7 +4,7 @@ import socket from '../socket';
 export const priceIntervalSlice = createSlice({
     name: "price_interval",
     initialState: {
-        value: {bitcoin: [], ethereum: [], litecoin: [], solana: []}
+        value: {}
     },
     reducers: {
         refresh: (state, action) => {
