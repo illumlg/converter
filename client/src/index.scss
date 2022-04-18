@@ -13,6 +13,7 @@
     color: white;
     padding: 10px;
     transition: background-color 0.3s;
+
     &:hover {
         cursor: pointer;
         background-color: rgba(197, 19, 19, 0.8);
@@ -71,6 +72,7 @@
             font-size: calc(5px + 2vmin) !important;
             transition: opacity 0.3s;
             color: white;
+
             &:focus {
                 -moz-appearance: none;
                 border-bottom-color: rgb(197, 19, 19) !important;
@@ -85,6 +87,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             width: auto;
+
             &:hover {
                 cursor: pointer;
                 background-color: rgba(197, 19, 19, 0.8);
@@ -121,17 +124,21 @@ footer {
     height: 100%;
     overflow-y: auto;
     border-top: 2px white solid;
+
     .form_container {
         padding-top: 10px;
     }
+
     .read {
         @extend %v_flex;
         border-right: 2px white solid;
         overflow-y: auto;
         row-gap: 10px;
+
         div {
             overflow-y: auto;
         }
+
         button {
             @extend %button;
             margin: auto 10px 10px;
