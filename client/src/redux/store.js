@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rateReducer from './redux/rate_slice';
-import priceIntervalReducer from './redux/price_interval_slice';
+import rateReducer from './rate_slice';
+import priceIntervalReducer from './price_interval_slice';
 
 export default configureStore({
     reducer: {

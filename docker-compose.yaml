@@ -17,6 +17,7 @@ services:
       - APP_CONTAINER=true
     depends_on:
       - db
+      - elastic
   db:
     image: postgres:alpine
     networks:
@@ -27,5 +28,15 @@ services:
       - POSTGRES_DB=converterdb
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=4444
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.2
+    networks:
+      - net
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
 networks:
   net: {}

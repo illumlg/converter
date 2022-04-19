@@ -2,7 +2,7 @@ import React from 'react';
 
 function Loader() {
     return (
-        <div className="cont">
+        <div className="loader">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="64"

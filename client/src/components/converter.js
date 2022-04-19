@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import socket from '../socket';
-import CurrencySelect from "./currencySelect";
+import CurrencySelect from "./util/currencySelect";
 
 function Converter() {
     const rates = useSelector((state) => state.rates.value);

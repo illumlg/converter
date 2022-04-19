@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 
 import App from './app';
 import { Provider } from 'react-redux';
-import store from '../store'
+import store from '../redux/store'
 import { BrowserRouter } from 'react-router-dom';
 
 test('renders learn react link', () => {

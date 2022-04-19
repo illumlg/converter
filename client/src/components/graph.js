@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
-import Loader from "./loader";
+import Loader from "./util/loader";
 
 function Graph() {
     const priceInterval = useSelector((state) => state.priceInterval.value);

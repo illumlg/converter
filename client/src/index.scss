@@ -9,7 +9,7 @@
     text-transform: uppercase;
     background-color: rgb(197, 19, 19);
     border: rgb(197, 19, 19);
-    border-radius: 5px;
+    border-radius: 15px;
     color: white;
     padding: 10px;
     transition: background-color 0.3s;
@@ -20,11 +20,18 @@
     }
 }
 
-.brand-logo {
-    margin-left: 20px;
+%elastic_pane {
+    @extend %v_flex;
+    background-color: maroon;
+    border-radius: 15px;
+    margin: 10px;
 }
 
-.navig {
+.brand-logo {
+    margin-left: 10px;
+}
+
+.nav-wrapper {
     background-color: rgb(197, 19, 19);
 }
 
@@ -33,7 +40,6 @@
     height: 100vh;
     background-color: #282c34;
     font-size: calc(5px + 2vmin);
-    justify-content: flex-start;
     color: white;
 }
 
@@ -45,11 +51,9 @@
 
 .converter_box {
     @extend %v_flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    align-self: center;
-    background-color: #32363d;
-    overflow-y: auto;
+    margin: auto;
+    background-color: #5a5f6b;
+    border-radius: 15px;
 
     label {
         color: white;
@@ -59,32 +63,16 @@
         @extend %v_flex;
         align-items: center;
         row-gap: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
         padding-left: 10px;
         padding-right: 10px;
-
-        input[type="submit"] {
-            @extend %button;
-            margin-bottom: 10px;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-            font-size: calc(5px + 2vmin) !important;
-            transition: opacity 0.3s;
-            color: white;
-
-            &:focus {
-                -moz-appearance: none;
-                border-bottom-color: rgb(197, 19, 19) !important;
-                box-shadow: none !important;
-            }
-        }
 
         select {
             background-color: rgb(197, 19, 19);
             color: white;
             border: rgb(197, 19, 19);
-            border-radius: 5px;
+            border-radius: 15px;
             transition: background-color 0.3s;
             width: auto;
 
@@ -100,43 +88,51 @@
     }
 }
 
-.title {
-    align-self: center;
-    font-size: calc(12px + 2vmin);
+input[type="submit"] {
+    @extend %button;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cont {
-    @extend %v_flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
+input[type="number"] {
+    -moz-appearance: textfield;
+    font-size: calc(5px + 2vmin) !important;
+    transition: opacity 0.3s;
+    color: white;
+
+    &:focus {
+        -moz-appearance: none;
+        border-bottom-color: rgb(197, 19, 19) !important;
+        box-shadow: none !important;
+    }
 }
 
-footer {
-    margin-top: auto;
-    text-align: center;
-    background-color: rgb(131, 13, 13);
-    font-size: 1.5rem;
+.elastic_parent {
+    @extend .converter_box;
+    width: 80%;
+    height: 60%;
+    min-width: fit-content;
 }
 
 .elastic {
     display: flex;
     height: 100%;
     overflow-y: auto;
-    border-top: 2px white solid;
 
     .form_container {
-        padding-top: 10px;
+        @extend %elastic_pane;
+        width: 40%;
+        min-width: fit-content;
     }
 
     .read {
-        @extend %v_flex;
-        border-right: 2px white solid;
-        overflow-y: auto;
-        row-gap: 10px;
-
+        @extend %elastic_pane;
+        width: 60%;
         div {
             overflow-y: auto;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         button {
@@ -145,4 +141,20 @@ footer {
             align-self: center;
         }
     }
+}
+
+.title {
+    align-self: center;
+    font-size: calc(12px + 2vmin);
+}
+
+.loader {
+    margin: auto;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: maroon;
+    font-size: 1.5rem;
 }

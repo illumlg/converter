@@ -37,7 +37,7 @@ function App() {
                 <li className={`sidenav-close${selected === "elastic" ? " active" : ""}`}
                     onClick={() => setSelected("elastic")}><Link to="/elastic">Elastic</Link></li>
             </ul>
-            <nav className="nav-wrapper navig">
+            <nav className="nav-wrapper">
                 <a href="." className="brand-logo">Currency</a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li className={selected === "rate" ? "active" : undefined}

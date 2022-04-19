@@ -28,9 +28,10 @@ io.on("connection", (socket) => {
         pool.exec("insert", ["converter_history", value])
             .then(() => console.log(value)).catch((e) => console.error(e));
     });
-    socket.on("getDoc", async (code, callback) => {
-        console.log(await getDoc(code));
-        callback(await getDoc(code));
+    socket.on("getDoc", async (callback) => {
+        let res = await getDoc();
+        console.log(res);
+        callback(res);
     });
     socket.on("postDoc", (doc) => {
         postDoc(doc).then(res => console.log(res));
