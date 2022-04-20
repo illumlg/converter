@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Loader() {
+function Loader(props) {
     return (
-        <div className="loader">
+        <div className="loader" hidden={props.hidden}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="64"

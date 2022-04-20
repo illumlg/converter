@@ -7,8 +7,8 @@ export function getBtcCurrent() {
             return curArr.map(item => {
                 return {code: item[0].toUpperCase(), rate: item[1].value, description: item[1].name};
             });
-        }).catch(e => {
-            console.error(`Can't reach api, error code ${e.code}`);
+        }).catch(() => {
+            console.error("Can't reach api");
             return [];
         });
 }

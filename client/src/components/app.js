@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { refreshRates } from '../redux/rate_slice';
 import { refreshPriceInterval } from '../redux/price_interval_slice';
 import M from 'materialize-css/dist/js/materialize.min';
+import 'react-notifications-component/dist/theme.css'
+import {ReactNotifications} from "react-notifications-component";
 
 function App() {
     const dispatch = useDispatch();
@@ -15,11 +17,11 @@ function App() {
     const [selected, setSelected] = useState(location.length > 0 ? location : "rate");
     useEffect(() => {
         dispatch(refreshRates());
-        dispatch(refreshPriceInterval())
+        dispatch(refreshPriceInterval());
         setInterval(() => {
             console.log("refreshing");
             dispatch(refreshRates());
-            dispatch(refreshPriceInterval())
+            dispatch(refreshPriceInterval());
         }, 60000);
         let el = document.querySelector(".sidenav");
         M.Sidenav.init(el, {});
@@ -61,7 +63,8 @@ function App() {
                     <Route path="*" element={<Navigate to="/rate" />} />
                 </Routes>
             </div>
-            <footer>Currency converter 2022</footer>
+            {/*<footer>Currency converter 2022</footer>*/}
+            <ReactNotifications />
         </div>
     );
 }

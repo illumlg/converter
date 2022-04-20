@@ -19,7 +19,7 @@ function Converter() {
     const [result, setResult] = useState({fiat: 0, btc:0});
     return (
         <div className="converter_box">
-            <label className="title">Converter</label>
+            <div className="title">Converter</div>
             <form onSubmit={(event) => {
                     event.preventDefault();
                     let res = convert({...form});
@@ -65,9 +65,9 @@ function Converter() {
             </form>
             <div className="hl" />
             <div className="result">
-                <label>Result: </label>
-                <div>{result.fiat.toFixed(2)} {form.secondCode}</div>
-                <div>{result.btc.toFixed(8)} BTC</div>
+                <div>Result: </div>
+                <div><span>{result.fiat.toFixed(2)}</span><span>{form.secondCode}</span></div>
+                <div><span>{result.btc.toFixed(8)}</span><span>BTC</span></div>
             </div>
         </div>
     )
