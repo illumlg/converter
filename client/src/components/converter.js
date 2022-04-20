@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import socket from '../socket';
 import CurrencySelect from "./util/currencySelect";
+import {Store} from "react-notifications-component";
+import {Error} from "./util/notification";
 
 function Converter() {
     const rates = useSelector((state) => state.rates.value);
     const convert = (req) => {
         let curFrom = rates.find((item) => item.code === req.firstCode);
             let curTo = rates.find((item) => item.code === req.secondCode);
-            if(!curFrom || !curTo) {
+            if(!curFrom || !curTo || req.value < 0) {
                 return {status: "nok"};
             }
             let diff = curTo.rate/curFrom.rate;
@@ -24,7 +26,7 @@ function Converter() {
                     event.preventDefault();
                     let res = convert({...form});
                     if(res.status==="nok") {
-                        alert("incorrect input");
+                        Store.addNotification(Error("Incorrect input"));
                         return;
                     }
                     setResult({...result, ...res});

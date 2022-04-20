@@ -13,7 +13,7 @@ export const priceIntervalSlice = createSlice({
     }
 });
 
-export const { refresh } = priceIntervalSlice.actions;
+const { refresh } = priceIntervalSlice.actions;
 export const refreshPriceInterval = () => dispatch => {
     socket.emit("price_interval", (res) => {dispatch(refresh(res))});
 };

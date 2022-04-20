@@ -1,14 +1,16 @@
 import React, {useState} from "react";
 import socket from "../socket";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import CurrencySelect from "./util/currencySelect";
 import CurrencyTable from "./util/currencyTable";
 import {Store} from "react-notifications-component";
-import {Success, Warning} from "./util/notification"
+import {Error, Success, Warning} from "./util/notification"
 import Loader from "./util/loader";
+import {refresh} from "../redux/elastic_slice";
 
 function Elastic() {
-    const [elasticData, setElasticData] = useState([]);
+    const dispatch = useDispatch();
+    const elasticData = useSelector((state) => state.elastic.value);
     const [hidden, setHidden] = useState(true);
     const [form, setForm] = useState({code: ""});
     const rates = useSelector((state) => state.rates.value);
@@ -20,7 +22,7 @@ function Elastic() {
                   <div className="title">Get</div>
                   {elasticData && elasticData.length > 0
                       ? <div className="tableCont">
-                          <CurrencyTable colNames={["Code", "Price", "Date"]} data={elasticData} />
+                          <CurrencyTable colNames={["Code", "Rate (to BTC)", "Date"]} data={elasticData} />
                         </div>
                       : <Loader hidden={hidden} />
                   }
@@ -31,8 +33,9 @@ function Elastic() {
                       }
                       setHidden(false);
                       socket.emit("getDoc", res => {
+                          setHidden(true);
                           res && res.length > 0
-                              ? setElasticData(res)
+                              ? dispatch(refresh(res))
                               : Store.addNotification(Warning("Server returned empty response"));
                       })
                   }}>Get</button>
@@ -45,17 +48,19 @@ function Elastic() {
                           Store.addNotification(Warning("No connection with server"));
                           return;
                       }
-                      socket.emit("postDoc",
-                          rates
-                              .filter(item => item.code === form.code)
-                              .map(item => {
-                                  return {
-                                      code: item.code,
-                                      price: item.rate,
-                                      date: new Date().toLocaleString("uk-UA")
-                                  }
-                              })
-                      );
+                      let cur = rates.filter(item => item.code === form.code)
+                          .map(item => {
+                              return {
+                                  code: item.code,
+                                  rate: item.rate,
+                                  date: new Date().toLocaleString("uk-UA")
+                              }
+                          });
+                      if(!cur || cur.length < 1) {
+                          Store.addNotification(Error("Incorrect input"));
+                          return;
+                      }
+                      socket.emit("postDoc", cur);
                       Store.addNotification(Success("Saved to elastic"));
                   }}>
                       <CurrencySelect name="code" form={form} setForm={setForm} rates={rates} desc="Select currency" />
