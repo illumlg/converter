@@ -36,7 +36,7 @@ function Elastic() {
                           setHidden(true);
                           res && res.length > 0
                               ? dispatch(refresh(res))
-                              : Store.addNotification(Warning("Server returned empty response"));
+                              : Store.addNotification(Warning("Elasticsearch unavailable"));
                       })
                   }}>Get</button>
               </div>
@@ -60,8 +60,12 @@ function Elastic() {
                           Store.addNotification(Error("Incorrect input"));
                           return;
                       }
-                      socket.emit("postDoc", cur);
-                      Store.addNotification(Success("Saved to elastic"));
+                      socket.emit("postDoc", cur, (res) => {
+                          Store.addNotification(res.success
+                                  ? Success("Saved to elastic")
+                                  : Warning("Elasticsearch unavailable")
+                          );
+                      });
                   }}>
                       <CurrencySelect name="code" form={form} setForm={setForm} rates={rates} desc="Select currency" />
                   </form>

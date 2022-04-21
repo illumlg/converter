@@ -33,8 +33,14 @@ io.on("connection", (socket) => {
         console.log(res);
         callback(res);
     });
-    socket.on("postDoc", (doc) => {
-        postDoc(doc).then(res => console.log(res));
+    socket.on("postDoc", (doc, callback) => {
+        postDoc(doc).then(res => {
+            console.log(res);
+            callback({"success": true});
+        }).catch((e) => {
+            console.error(e);
+            callback({"success": false});
+        });
     });
     socket.on("disconnect", () => {
         console.log("disconnected");
