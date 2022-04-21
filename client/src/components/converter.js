@@ -68,8 +68,8 @@ function Converter() {
             <div className="hl" />
             <div className="result">
                 <div>Result: </div>
-                <div><span>{result.fiat.toFixed(2)}</span><span>{form.secondCode}</span></div>
-                <div><span>{result.btc.toFixed(8)}</span><span>BTC</span></div>
+                <div><span className="conv_res_value">{result.fiat.toFixed(2)}</span><span className="conv_res_code">{form.secondCode}</span></div>
+                <div><span className="conv_res_btc">{result.btc.toFixed(8)}</span><span>BTC</span></div>
             </div>
         </div>
     )
