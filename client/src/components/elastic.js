@@ -36,7 +36,7 @@ function Elastic() {
                           setHidden(true);
                           res && res.length > 0
                               ? dispatch(refresh(res))
-                              : Store.addNotification(Warning("Elasticsearch unavailable"));
+                              : Store.addNotification(Warning("Elasticsearch is unavailable"));
                       })
                   }}>Get</button>
               </div>
@@ -63,7 +63,7 @@ function Elastic() {
                       socket.emit("postDoc", cur, (res) => {
                           Store.addNotification(res.success
                                   ? Success("Saved to elastic")
-                                  : Warning("Elasticsearch unavailable")
+                                  : Warning("Elasticsearch is unavailable")
                           );
                       });
                   }}>
