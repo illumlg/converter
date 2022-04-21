@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65520910-62a1-4c4c-9d6a-b67bd24fdf1d" name="Changes" comment="refactoring tests" />
+    <list default="true" id="65520910-62a1-4c4c-9d6a-b67bd24fdf1d" name="Changes" comment="refactoring tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +64,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Server Tests">
+  <component name="RunManager" selected="npm.server start">
     <configuration name="Client Tests" type="JavaScriptTestRunnerJest">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -88,23 +91,9 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="client test" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/client/package.json" />
-      <command value="test" />
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="server start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="start" />
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="server test" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/server/package.json" />
-      <command value="test" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -114,8 +103,6 @@
       <item itemvalue="Jest.Client Tests" />
       <item itemvalue="npm.client start" />
       <item itemvalue="npm.server start" />
-      <item itemvalue="npm.client test" />
-      <item itemvalue="npm.server test" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -132,6 +119,7 @@
       <workItem from="1650348151991" duration="25195000" />
       <workItem from="1650435260004" duration="26564000" />
       <workItem from="1650521267324" duration="9402000" />
+      <workItem from="1650531311781" duration="1330000" />
     </task>
     <task id="LOCAL-00001" summary="refactor converter to project with two submodules">
       <created>1649930623028</created>
@@ -203,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650531015135</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactoring tests">
+      <created>1650531377689</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1650531377690</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
