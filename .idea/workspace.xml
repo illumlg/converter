@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65520910-62a1-4c4c-9d6a-b67bd24fdf1d" name="Changes" comment="refactoring tests" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27mdjyBbhVrTHhOgrfF2Gk4xdTH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;14.19.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;14.18.13&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/illuminatus/WebstormProjects/converter/server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/illuminatus/WebstormProjects/converter/client/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/254/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/test" />
+      <recent name="$PROJECT_DIR$/server/src/test" />
+      <recent name="$PROJECT_DIR$/client/src/redux" />
+      <recent name="$PROJECT_DIR$/client/src/components/util" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.Server Tests">
+    <configuration name="Client Tests" type="JavaScriptTestRunnerJest">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/client/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/client" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Server Tests" type="JavaScriptTestRunnerJest">
+      <config-file value="$PROJECT_DIR$/server/src/test/jest.config.js" />
+      <node-interpreter value="project" />
+      <node-options value="--experimental-vm-modules --no-warnings=ExperimentalWarning" />
+      <jest-package value="$PROJECT_DIR$/server/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/server" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="client start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="client test" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="test" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server test" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="test" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.Server Tests" />
+      <item itemvalue="Jest.Client Tests" />
+      <item itemvalue="npm.client start" />
+      <item itemvalue="npm.server start" />
+      <item itemvalue="npm.client test" />
+      <item itemvalue="npm.server test" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65520910-62a1-4c4c-9d6a-b67bd24fdf1d" name="Changes" comment="" />
+      <created>1649929333357</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649929333357</updated>
+      <workItem from="1649929334440" duration="10387000" />
+      <workItem from="1650003055586" duration="21795000" />
+      <workItem from="1650262498185" duration="25680000" />
+      <workItem from="1650348151991" duration="25195000" />
+      <workItem from="1650435260004" duration="26564000" />
+      <workItem from="1650521267324" duration="9402000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactor converter to project with two submodules">
+      <created>1649930623028</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649930623028</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor converter to project with two submodules">
+      <created>1649930766426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649930766426</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactoring">
+      <created>1649931560091</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649931560091</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added elasticsearch functionality">
+      <created>1650292985879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650292985879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added elasticsearch functionality">
+      <created>1650293069941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650293069941</updated>
+    </task>
+    <task id="LOCAL-00006" summary="style and directory structure refactoring">
+      <created>1650378399410</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650378399410</updated>
+    </task>
+    <task id="LOCAL-00007" summary="style and directory structure refactoring">
+      <created>1650379215461</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650379215461</updated>
+    </task>
+    <task id="LOCAL-00008" summary="finished elastisearch tab, added notifications">
+      <created>1650458748074</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1650458748074</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactoring">
+      <created>1650466276191</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1650466276191</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactoring tests">
+      <created>1650531015135</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1650531015135</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/client" />
+      <path value="$PROJECT_DIR$/server" />
+    </ignored-roots>
+    <MESSAGE value="refactor converter to project with two submodules" />
+    <MESSAGE value="added elasticsearch functionality" />
+    <MESSAGE value="style and directory structure refactoring" />
+    <MESSAGE value="finished elastisearch tab, added notifications" />
+    <MESSAGE value="refactoring" />
+    <MESSAGE value="refactoring tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring tests" />
+  </component>
+</project>
