@@ -5,6 +5,9 @@ services:
       - net
     ports:
       - 3000:3000
+    environment:
+      - REACT_APP_HOST=server
+      - REACT_APP_PORT=8080
     depends_on:
       - server
   server:
@@ -14,7 +17,13 @@ services:
     ports:
       - 8080:8080
     environment:
-      - APP_CONTAINER=true
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=converterdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=4444
+      - ELASTIC_HOST=elastic
+      - ELASTIC_PORT=9200
     depends_on:
       - db
       - elastic
