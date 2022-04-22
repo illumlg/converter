@@ -4,7 +4,5 @@ import converterReducer from './converterSlice';
 export default configureStore({
     reducer: {
         converter: converterReducer
-        // priceInterval: priceIntervalReducer,
-        // elastic: elasticReducer
     }
 });
