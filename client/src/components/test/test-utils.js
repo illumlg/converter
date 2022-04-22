@@ -2,8 +2,7 @@ import React from 'react'
 import { render as rtlRender } from '@testing-library/react'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import rateReducer from "../../redux/rate_slice";
-import priceIntervalReducer from "../../redux/price_interval_slice";
+import converterReducer from "../../redux/converterSlice";
 
 function render(
     ui,
@@ -11,8 +10,7 @@ function render(
         preloadedState,
         store = configureStore({
             reducer: {
-                rates: rateReducer,
-                priceInterval: priceIntervalReducer
+                converter: converterReducer
             }
         , preloadedState}),
         ...renderOptions

@@ -6,14 +6,14 @@ import CurrencyTable from "./util/currencyTable";
 import {Store} from "react-notifications-component";
 import {Error, Success, Warning} from "./util/notification"
 import Loader from "./util/loader";
-import {refresh} from "../redux/elastic_slice";
+import {refreshElastic} from "../redux/converterSlice";
 
 function Elastic() {
     const dispatch = useDispatch();
-    const elasticData = useSelector((state) => state.elastic.value);
+    const elasticData = useSelector((state) => state.converter.elastic);
     const [hidden, setHidden] = useState(true);
     const [form, setForm] = useState({code: ""});
-    const rates = useSelector((state) => state.rates.value);
+    const rates = useSelector((state) => state.converter.rates);
     return (
       <div className="elastic_parent">
           <div className="title">Elastic Search</div>
@@ -35,7 +35,7 @@ function Elastic() {
                       socket.emit("getDoc", res => {
                           setHidden(true);
                           res && res.length > 0
-                              ? dispatch(refresh(res))
+                              ? dispatch(refreshElastic(res))
                               : Store.addNotification(Warning("Elasticsearch is unavailable"));
                       })
                   }}>Get</button>

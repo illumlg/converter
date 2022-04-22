@@ -15,7 +15,7 @@ import { Line } from 'react-chartjs-2';
 import Loader from "./util/loader";
 
 function Graph() {
-    const priceInterval = useSelector((state) => state.priceInterval.value);
+    const priceInterval = useSelector((state) => state.converter.priceInterval);
     let render;
     if (priceInterval && Object.keys(priceInterval).length > 0) {
         ChartJS.register(

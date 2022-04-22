@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import M from 'materialize-css/dist/js/materialize.min';
+import 'react-notifications-component/dist/theme.css'
+import {ReactNotifications} from "react-notifications-component";
 import Converter from "./converter";
 import Currency from "./currency";
 import Graph from './graph';
 import Elastic from './elastic'
-import { useDispatch } from 'react-redux';
-import { refreshRates } from '../redux/rate_slice';
-import { refreshPriceInterval } from '../redux/price_interval_slice';
-import M from 'materialize-css/dist/js/materialize.min';
-import 'react-notifications-component/dist/theme.css'
-import {ReactNotifications} from "react-notifications-component";
+import {refreshPriceInterval, refreshRates} from "../redux/converterSlice";
 
 function App() {
     const dispatch = useDispatch();

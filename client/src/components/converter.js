@@ -6,7 +6,7 @@ import {Store} from "react-notifications-component";
 import {Error} from "./util/notification";
 
 function Converter() {
-    const rates = useSelector((state) => state.rates.value);
+    const rates = useSelector((state) => state.converter.rates);
     const convert = (req) => {
         let curFrom = rates.find((item) => item.code === req.firstCode);
             let curTo = rates.find((item) => item.code === req.secondCode);
