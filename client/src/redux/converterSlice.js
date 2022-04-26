@@ -23,10 +23,18 @@ export const converterSlice = createSlice({
 
 const { _refreshRates, _refreshPriceInterval, refreshElastic } = converterSlice.actions;
 
+/**
+ * Retrieves up-to-date bitcoin to fiat rates
+ * @returns {(function(*): void)|*}
+ */
 export const refreshRates = () => dispatch => {
     socket.emit("currency", (res) => {dispatch(_refreshRates(res))});
 };
 
+/**
+ * Retrieves up-to-date bitcoin, ethereum, litecoin, solana prices in USD for last 30 days
+ * @returns {(function(*): void)|*}
+ */
 export const refreshPriceInterval = () => dispatch => {
     socket.emit("price_interval", (res) => {dispatch(_refreshPriceInterval(res))});
 };

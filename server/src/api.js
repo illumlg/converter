@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+/**
+ * Retrieves current bitcoin rate to fiat currencies
+ * @returns {Promise<[]>}
+ */
 export function getBtcCurrent() {
     return axios.get("https://api.coingecko.com/api/v3/exchange_rates")
         .then(axiosRes => {
@@ -13,6 +17,10 @@ export function getBtcCurrent() {
         });
 }
 
+/**
+ * Retrieves bitcoin, ethereum, litecoin, solana prices in USD for last 30 days
+ * @returns {Promise<{}>}
+ */
 export async function getPriceInterval() {
     let currencies = ["bitcoin", "ethereum", "litecoin", "solana"];
     let response = {};

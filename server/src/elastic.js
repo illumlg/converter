@@ -9,6 +9,10 @@ const client = new Client({
 });
 console.log("connected to elastic");
 
+/**
+ * Retrieves documents from index "currency"
+ * @returns {Promise<[]>}
+ */
 export async function getDoc() {
     try {
         let v = await client.search({
@@ -25,6 +29,11 @@ export async function getDoc() {
     }
 }
 
+/**
+ * Creates index "currency" if it does not exist and inserts document in it
+ * @param doc
+ * @returns {Promise<{}>}
+ */
 export function postDoc(doc) {
     return client.index({
         index: "currency",
