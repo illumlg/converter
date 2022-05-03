@@ -8,6 +8,19 @@ const client = new Client({
     // }
 });
 console.log("connected to elastic");
+if (!await client.indices.exists({index: "currency"})) {
+    await client.indices.create({
+        index: "currency",
+        mappings: {
+            properties: {
+                code: {type: "keyword"},
+                rate: {type: "float"},
+                date: {type: "date", format: "dd.MM.yyyy, HH:mm:ss"}
+            }
+        }
+    });
+    console.log(`successfully created "currency" index`);
+}
 
 /**
  * Retrieves documents from index "currency"
@@ -20,11 +33,16 @@ export async function getDoc() {
             query: {
                 match_all: {}
             },
-            size: 100
+            size: 100,
+            sort: {
+                date: {
+                    order: "desc"
+                }
+            }
         });
-        return v.hits.hits.map(item => Object.values(item._source)[0]).reverse();
+        return v.hits.hits.map(item => item._source);
     } catch (e) {
-        console.log("index not found");
+        console.error(e);
         return [];
     }
 }
@@ -34,12 +52,11 @@ export async function getDoc() {
  * @param doc
  * @returns {Promise<{}>}
  */
-export function postDoc(doc) {
-    return client.index({
+export async function postDoc(doc) {
+    return await client.index({
         index: "currency",
         document: {
             ...doc
         }
     });
 }
-

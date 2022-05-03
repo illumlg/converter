@@ -48,18 +48,12 @@ function Elastic() {
                           Store.addNotification(Warning("No connection with server"));
                           return;
                       }
-                      let cur = rates.filter(item => item.code === form.code)
-                          .map(item => {
-                              return {
-                                  code: item.code,
-                                  rate: item.rate,
-                                  date: new Date().toLocaleString("uk-UA")
-                              }
-                          });
-                      if(!cur || cur.length < 1) {
+                      let cur = rates.find(item => item.code === form.code);
+                      if(!cur) {
                           Store.addNotification(Error("Incorrect input"));
                           return;
                       }
+                      cur = {code: cur.code, rate: cur.rate, date: new Date().toLocaleString("uk-UA")};
                       socket.emit("postDoc", cur, (res) => {
                           Store.addNotification(res.success
                                   ? Success("Saved to elastic")
